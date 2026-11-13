@@ -7,137 +7,42 @@
   <link rel="stylesheet" href="css/style.css">
   
   <style>
-    body, html, main, section, .contacts-page-section {
-      background-image: none !important;
-    }
-
-    body {
-      background-color: #0b1320 !important;
-      background: linear-gradient(135deg, #0b1320 0%, #111d33 100%) !important;
-      color: #ffffff;
-      margin: 0;
-      min-height: 100vh;
-    }
+    body, html, main, section, .contacts-page-section { background-image: none !important; }
+    body { background-color: #0b1320 !important; background: linear-gradient(135deg, #0b1320 0%, #111d33 100%) !important; color: #ffffff; margin: 0; min-height: 100vh; }
 
     .contacts-page-section {
-      padding: 100px 0;
-      min-height: calc(100vh - 150px);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
+      padding: 100px 0; min-height: calc(100vh - 150px); position: relative; overflow: hidden; display: flex; align-items: center;
     }
-
     .contacts-page-section::before {
-      content: 'МТ';
-      position: absolute;
-      top: 50%;
-      right: -50px;
-      transform: translateY(-50%);
-      font-size: 550px;
-      font-weight: 900;
-      color: rgba(255, 255, 255, 0.03);
-      line-height: 1;
-      pointer-events: none;
-      z-index: 0;
+      content: 'МТ'; position: absolute; top: 50%; right: -50px; transform: translateY(-50%);
+      font-size: 550px; font-weight: 900; color: rgba(255, 255, 255, 0.03); line-height: 1; pointer-events: none; z-index: 0;
     }
-
     .contacts-container {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding-left: 5vw;
+      position: relative; z-index: 1; width: 100%; max-width: 1400px; margin: 0 auto; padding-left: 5vw;
     }
+    .contacts-content-inner { max-width: 650px; }
+    .contacts-title { font-size: 56px; font-weight: 800; margin-top: 0; margin-bottom: 16px; color: #ffffff; line-height: 1.1; }
+    .contacts-subtitle { font-size: 20px; color: #cbd5e1; margin-bottom: 60px; line-height: 1.6; }
+    
+    .contacts-list { display: flex; flex-direction: column; gap: 40px; }
+    .contact-item { display: flex; flex-direction: column; gap: 8px; border-left: 3px solid #e86f22; padding-left: 24px; }
+    .contact-label { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #e86f22; font-weight: 700; }
+    .contact-value { font-size: 32px; font-weight: 600; color: #ffffff; text-decoration: none; transition: color 0.3s ease; line-height: 1.2; }
+    .contact-value:hover { color: #e86f22; }
+    .contact-name { font-size: 16px; color: #94a3b8; margin-top: 4px; }
+    .contact-text { font-size: 28px; color: #ffffff; font-weight: 600; }
 
-    .contacts-content-inner {
-      max-width: 650px;
-    }
+    .footer__phone { color: #ffffff; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+    .footer__phone:hover { color: #e86f22; }
 
-    .contacts-title {
-      font-size: 56px;
-      font-weight: 800;
-      margin-top: 0;
-      margin-bottom: 16px;
-      color: #ffffff;
-      line-height: 1.1;
-    }
-
-    .contacts-subtitle {
-      font-size: 20px;
-      color: #cbd5e1;
-      margin-bottom: 60px;
-      line-height: 1.6;
-    }
-
-    .contacts-list {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      border-left: 3px solid #e86f22;
-      padding-left: 24px;
-    }
-
-    .contact-label {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #e86f22;
-      font-weight: 700;
-    }
-
-    .contact-value {
-      font-size: 32px;
-      font-weight: 600;
-      color: #ffffff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      line-height: 1.2;
-    }
-
-    .contact-value:hover {
-      color: #e86f22;
-    }
-
-    .contact-name {
-      font-size: 16px;
-      color: #94a3b8;
-      margin-top: 4px;
-    }
-
-    .contact-text {
-      font-size: 28px;
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    .footer__phone {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .footer__phone:hover {
-      color: #e86f22;
-    }
-
-    /* === АДАПТИВ ДЛЯ МОБИЛЬНЫХ (CONTACTS) === */
     @media (max-width: 768px) {
-      .contacts-page-section { padding: 60px 0; }
-      .contacts-page-section::before { display: none; } /* Убираем букву МТ на телефоне */
-      .contacts-container { padding-left: 15px; padding-right: 15px; } /* Убираем жесткий отступ */
-      .contacts-title { font-size: 36px; }
-      .contacts-subtitle { font-size: 16px; margin-bottom: 40px; }
+      .contacts-page-section { padding: 40px 0; }
+      .contacts-page-section::before { display: none; }
+      .contacts-container { padding-left: 15px; padding-right: 15px; }
+      .contacts-title { font-size: 32px; }
+      .contacts-subtitle { font-size: 16px; margin-bottom: 30px; }
       .contact-value { font-size: 24px; }
-      .contact-text { font-size: 24px; }
+      .contact-text { font-size: 22px; }
     }
   </style>
 </head>
@@ -175,34 +80,28 @@
   <main>
     <section class="contacts-page-section">
       <div class="contacts-container">
-        
         <div class="contacts-content-inner">
           <h2 class="contacts-title">Связаться с нами</h2>
           <p class="contacts-subtitle">Свяжитесь с нами любым удобным способом для получения консультации, подбора оборудования или расчёта стоимости.</p>
           
           <div class="contacts-list">
-            
             <div class="contact-item">
               <span class="contact-label">Телефон</span>
               <a href="tel:+79199000870" class="contact-value">+7 (919) 900-08-70</a>
               <span class="contact-name">Александр</span>
             </div>
-
             <div class="contact-item">
               <span class="contact-label">E-mail</span>
               <a href="mailto:mailsea1975@yandex.ru" class="contact-value">mailsea1975@yandex.ru</a>
               <span class="contact-name">Ответим в течение рабочего дня</span>
             </div>
-
             <div class="contact-item">
               <span class="contact-label">Мессенджер</span>
               <span class="contact-text">MAX</span>
               <span class="contact-name">Напишите нам по номеру телефона выше</span>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   </main>
@@ -213,12 +112,10 @@
         <div class="footer__logo">ООО "МАКОН ТЕХНИК"</div>
         <p class="footer__muted">Промышленные газовые горелки · B2B</p>
       </div>
-      
       <div class="footer__cols">
         <a href="contacts.html">Контакты</a>
         <a href="tel:+79199000870" class="footer__phone">+7 (919) 900-08-70</a>
       </div>
-      
       <p class="footer__muted">© 2026</p>
     </div>
   </footer>
