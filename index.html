@@ -42,12 +42,6 @@
       font-weight: 800;
     }
 
-    @media (max-width: 768px) {
-      .hero-custom h1 {
-        font-size: 32px;
-      }
-    }
-
     .hero-custom__lead {
       font-size: 20px;
       line-height: 1.6;
@@ -120,13 +114,6 @@
       align-items: center;
     }
 
-    @media (max-width: 900px) {
-      .story-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-    }
-
     .story-content p {
       font-size: 17px;
       line-height: 1.8;
@@ -163,11 +150,6 @@
       border-radius: 16px;
       border: 1px solid #e2e8f0;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     .stat-card h4 {
@@ -234,10 +216,23 @@
       color: #ffffff;
     }
 
+    /* === АДАПТИВ ДЛЯ МОБИЛЬНЫХ (INDEX) === */
     @media (max-width: 768px) {
-      .mission-lead {
-        font-size: 28px;
-      }
+      .hero-custom { padding: 60px 0; }
+      .hero-custom h1 { font-size: 32px; }
+      .hero-custom__lead { font-size: 16px; }
+      .hero-custom::before { display: none; } /* Убираем большую букву МТ на телефоне */
+      .hero-contact-link { width: 100%; justify-content: center; }
+      
+      .story-section { padding: 50px 0; }
+      .story-grid { grid-template-columns: 1fr; gap: 40px; }
+      .story-content .highlight-quote { font-size: 18px; padding: 20px; }
+      .stat-card { padding: 24px; }
+      .stat-card h4 { font-size: 42px; }
+      
+      .mission-section { padding: 60px 0; }
+      .mission-section::before { display: none; }
+      .mission-lead { font-size: 28px; }
     }
   </style>
 </head>
@@ -273,7 +268,6 @@
   </header>
 
   <main>
-    <!-- ГЛАВНЫЙ ЭКРАН (HERO) -->
     <section class="hero-custom">
       <div class="container">
         <div class="hero-custom__inner">
@@ -301,10 +295,8 @@
       </div>
     </section>
 
-    <!-- БЛОК 1: ИСТОРИЯ И ЦИФРЫ -->
     <section class="story-section">
       <div class="container story-grid">
-        
         <div class="story-content">
           <p>
             Компания <strong>«Макон-Техник»</strong> уже более 5 лет занимается разработкой и производством бытовой и промышленной климатической техники. В команде нашей компании любимым делом занимаются одни из лучших в России специалистов в области промышленной газовой климатотехники с опытом работы от 15 и свыше 25 лет.
@@ -333,11 +325,9 @@
             <p>бытовых электрических нагревателей в РФ и странах Таможенного союза</p>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- БЛОК 2: МИССИЯ -->
     <section class="mission-section">
       <div class="container">
         <div class="mission-inner">
@@ -349,7 +339,6 @@
       </div>
     </section>
 
-    <!-- БЛОК: ПОЧЕМУ ВЫБИРАЮТ НАС -->
     <section class="section section--muted">
       <div class="container">
         <h2 class="section__title">Почему выбирают нас</h2>
