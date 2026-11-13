@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="css/style.css">
   
   <style>
-    /* ГЛАВНЫЙ ЭКРАН (HERO) */
     .hero-custom {
       background: linear-gradient(135deg, #0b1320 0%, #111d33 100%);
       color: #ffffff;
@@ -16,223 +15,67 @@
       position: relative;
       overflow: hidden;
     }
-
     .hero-custom::before {
-      content: 'МТ';
-      position: absolute;
-      top: -50px;
-      right: -20px;
-      font-size: 400px;
-      font-weight: 900;
-      color: rgba(255, 255, 255, 0.02);
-      line-height: 1;
-      pointer-events: none;
+      content: 'МТ'; position: absolute; top: -50px; right: -20px; font-size: 400px; font-weight: 900;
+      color: rgba(255, 255, 255, 0.02); line-height: 1; pointer-events: none;
     }
-
     .hero-custom__inner {
-      max-width: 900px;
-      position: relative;
-      z-index: 1;
+      max-width: 900px; position: relative; z-index: 1;
+      margin-left: 0; margin-right: auto; /* Прижимаем влево на ПК */
     }
-
-    .hero-custom h1 {
-      font-size: 48px;
-      line-height: 1.2;
-      margin-bottom: 24px;
-      font-weight: 800;
-    }
-
-    .hero-custom__lead {
-      font-size: 20px;
-      line-height: 1.6;
-      color: #cbd5e1;
-      margin-bottom: 40px;
-      max-width: 700px;
-    }
-
-    .hero-contact-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 18px;
-      color: #ffffff;
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 16px 32px;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      margin-bottom: 40px;
-    }
-
-    .hero-contact-link:hover {
-      background: rgba(232, 111, 34, 0.1);
-      border-color: #e86f22;
-      color: #e86f22;
-    }
-
-    .hero-contact-link svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-    }
-
-    .hero-custom__trust {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      flex-wrap: wrap;
-    }
-
-    .hero-custom__trust li {
-      position: relative;
-      padding-left: 24px;
-      color: #a0aec0;
-      font-size: 15px;
-    }
-
-    .hero-custom__trust li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #e86f22;
-      font-weight: bold;
-    }
-
-    /* БЛОК 1: ИСТОРИЯ И ЦИФРЫ (Светлый) */
-    .story-section {
-      padding: 100px 0;
-      background: #ffffff;
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .story-content p {
-      font-size: 17px;
-      line-height: 1.8;
-      color: #334155;
-      margin-bottom: 24px;
-    }
-
-    .story-content strong {
-      color: #0b1320;
-      font-weight: 600;
-    }
-
-    .story-content .highlight-quote {
-      font-size: 22px;
-      font-weight: 600;
-      color: #0b1320;
-      padding: 24px 32px;
-      background: #f8fafc;
-      border-radius: 12px;
-      border-left: 4px solid #e86f22;
-      margin: 40px 0;
-      line-height: 1.4;
-    }
-
-    .stats-wrapper {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    .stat-card {
-      background: #f8fafc;
-      padding: 40px;
-      border-radius: 16px;
-      border: 1px solid #e2e8f0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .stat-card h4 {
-      font-size: 56px;
-      color: #e86f22;
-      margin: 0 0 12px 0;
-      line-height: 1;
-      font-weight: 800;
-    }
-
-    .stat-card p {
-      font-size: 18px;
-      color: #475569;
-      margin: 0;
-      line-height: 1.4;
-      font-weight: 500;
-    }
-
-    /* БЛОК 2: МИССИЯ (Темный) */
-    .mission-section {
-      padding: 100px 0;
-      background: linear-gradient(135deg, #0b1320 0%, #111d33 100%);
-      color: #ffffff;
-      position: relative;
-      overflow: hidden;
-    }
+    .hero-custom h1 { font-size: 48px; line-height: 1.2; margin-bottom: 24px; font-weight: 800; }
+    .hero-custom__lead { font-size: 20px; line-height: 1.6; color: #cbd5e1; margin-bottom: 40px; max-width: 700px; }
     
-    .mission-section::before {
-      content: 'МТ';
-      position: absolute;
-      bottom: -50px;
-      left: -20px;
-      font-size: 400px;
-      font-weight: 900;
-      color: rgba(255, 255, 255, 0.03);
-      line-height: 1;
-      pointer-events: none;
+    .hero-contact-link {
+      display: inline-flex; align-items: center; gap: 12px; font-size: 18px; color: #ffffff;
+      text-decoration: none; background: rgba(255, 255, 255, 0.05); padding: 16px 32px;
+      border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; margin-bottom: 40px;
+    }
+    .hero-contact-link:hover { background: rgba(232, 111, 34, 0.1); border-color: #e86f22; color: #e86f22; }
+    .hero-contact-link svg { width: 24px; height: 24px; fill: currentColor; }
+    
+    .hero-custom__trust { display: flex; gap: 32px; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; }
+    .hero-custom__trust li { position: relative; padding-left: 24px; color: #a0aec0; font-size: 15px; }
+    .hero-custom__trust li::before { content: '✓'; position: absolute; left: 0; color: #e86f22; font-weight: bold; }
+    .badge { display: inline-block; background: rgba(232,111,34,0.15); color: #e86f22; border: 1px solid rgba(232,111,34,0.35); padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 20px; }
+
+    .story-section { padding: 100px 0; background: #ffffff; }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .story-content p { font-size: 17px; line-height: 1.8; color: #334155; margin-bottom: 24px; }
+    .story-content strong { color: #0b1320; font-weight: 600; }
+    .story-content .highlight-quote { font-size: 22px; font-weight: 600; color: #0b1320; padding: 24px 32px; background: #f8fafc; border-radius: 12px; border-left: 4px solid #e86f22; margin: 40px 0; line-height: 1.4; }
+    
+    .stats-wrapper { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .stat-card { background: #f8fafc; padding: 40px; border-radius: 16px; border: 1px solid #e2e8f0; }
+    .stat-card h4 { font-size: 56px; color: #e86f22; margin: 0 0 12px 0; line-height: 1; font-weight: 800; }
+    .stat-card p { font-size: 18px; color: #475569; margin: 0; line-height: 1.4; font-weight: 500; }
+
+    .mission-section { padding: 100px 0; background: linear-gradient(135deg, #0b1320 0%, #111d33 100%); color: #ffffff; position: relative; overflow: hidden; }
+    .mission-section::before { content: 'МТ'; position: absolute; bottom: -50px; left: -20px; font-size: 400px; font-weight: 900; color: rgba(255, 255, 255, 0.03); line-height: 1; pointer-events: none; }
+    .mission-inner { max-width: 900px; position: relative; z-index: 1; margin-left: 0; margin-right: auto; /* Влево */ }
+    .mission-label { display: inline-block; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #e86f22; margin-bottom: 24px; font-weight: 700; border: 1px solid rgba(232, 111, 34, 0.3); padding: 6px 16px; border-radius: 20px; }
+    .mission-lead { font-size: 40px; line-height: 1.3; font-weight: 800; margin: 0; color: #ffffff; }
+
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; gap: 50px; }
     }
 
-    .mission-inner {
-      max-width: 900px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .mission-label {
-      display: inline-block;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #e86f22;
-      margin-bottom: 24px;
-      font-weight: 700;
-      border: 1px solid rgba(232, 111, 34, 0.3);
-      padding: 6px 16px;
-      border-radius: 20px;
-    }
-
-    .mission-lead {
-      font-size: 40px;
-      line-height: 1.3;
-      font-weight: 800;
-      margin: 0;
-      color: #ffffff;
-    }
-
-    /* === АДАПТИВ ДЛЯ МОБИЛЬНЫХ (INDEX) === */
     @media (max-width: 768px) {
-      .hero-custom { padding: 60px 0; }
-      .hero-custom h1 { font-size: 32px; }
-      .hero-custom__lead { font-size: 16px; }
-      .hero-custom::before { display: none; } /* Убираем большую букву МТ на телефоне */
-      .hero-contact-link { width: 100%; justify-content: center; }
-      
-      .story-section { padding: 50px 0; }
-      .story-grid { grid-template-columns: 1fr; gap: 40px; }
-      .story-content .highlight-quote { font-size: 18px; padding: 20px; }
+      .hero-custom { padding: 40px 0; }
+      .hero-custom h1 { font-size: 28px !important; line-height: 1.3 !important; }
+      .hero-custom__lead { font-size: 16px !important; }
+      .hero-custom::before { display: none; }
+      .hero-contact-link { width: 100%; justify-content: center; padding: 14px 20px; }
+      .badge { font-size: 11px; }
+      .hero-custom__trust { gap: 15px; }
+      .hero-custom__trust li { font-size: 13px; }
+      .story-section { padding: 40px 0; }
+      .story-content .highlight-quote { font-size: 18px; padding: 20px; margin: 20px 0; }
       .stat-card { padding: 24px; }
       .stat-card h4 { font-size: 42px; }
-      
-      .mission-section { padding: 60px 0; }
+      .mission-section { padding: 40px 0; }
       .mission-section::before { display: none; }
-      .mission-lead { font-size: 28px; }
+      .mission-lead { font-size: 24px !important; }
     }
   </style>
 </head>
