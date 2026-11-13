@@ -53,23 +53,12 @@
       z-index: 1;
     }
 
-    @media (max-width: 768px) {
-      .product-highlights {
-        grid-template-columns: 1fr;
-      }
-    }
-
     .highlight-card {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 24px;
       border-radius: 8px;
       transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .highlight-card:hover {
-      transform: translateY(-5px);
-      border-color: #e86f22;
     }
 
     .highlight-card h4 {
@@ -93,6 +82,13 @@
       font-weight: 700;
       font-size: 18px;
       border: 1px solid rgba(232, 111, 34, 0.3);
+    }
+
+    /* === АДАПТИВ ДЛЯ МОБИЛЬНЫХ (PRODUCTS) === */
+    @media (max-width: 768px) {
+      .intro-block { padding: 24px 20px; }
+      .product-highlights { grid-template-columns: 1fr; }
+      .intro-block::after { display: none; }
     }
   </style>
 </head>
@@ -134,7 +130,6 @@
         <h2 class="section__title">Наша продукция</h2>
         <p class="section__lead">Инновационные решения для промышленного климата и отопления.</p>
 
-        <!-- БЛОК С ОПИСАНИЕМ ПРОДУКЦИИ -->
         <div class="intro-block">
           <h3>Акцент на промышленной газовой климатотехнике</h3>
           <p>
@@ -142,14 +137,12 @@
           </p>
           
           <div class="product-highlights">
-            <!-- Карточка ВГСТ -->
             <div class="highlight-card">
               <h4>Воздухонагреватели газовые смесительного типа</h4>
               <p>Серия <strong>ВГСТ</strong> — надежное решение для отопления и вентиляции промышленных помещений.</p>
               <span class="power-badge">Мощность: от 30 до 100 кВт</span>
             </div>
             
-            <!-- Карточка ИГИТТ -->
             <div class="highlight-card">
               <h4>Излучатели газовые инфракрасные темного типа</h4>
               <p>Серия <strong>ИГИТТ</strong> — эффективный локальный обогрев для цехов, складов и ангаров.</p>
@@ -158,14 +151,11 @@
           </div>
         </div>
 
-        <!-- БЛОК С ГОРЕЛКОЙ -->
         <h2 class="section__title" style="margin-top: 60px;">Горелка серии МТ</h2>
         <p class="section__lead">Одна проверенная модель под промышленные задачи. Полный пакет технических данных и документов.</p>
         
-        <!-- Карточка с характеристиками -->
         <div class="model" style="margin-bottom: 40px;">
           <div class="model__media">
-            <!-- Главное фото -->
             <a href="images/burner-main1.jpg" class="glightbox" data-gallery="burners">
               <img src="images/burner-main1.jpg" alt="Промышленная газовая горелка МАКОН ТЕХНИК">
             </a>
@@ -184,7 +174,6 @@
           </div>
         </div>
 
-        <!-- ГАЛЕРЕЯ -->
         <div class="gallery">
           <a href="images/burner-main2.jpg" class="glightbox" data-gallery="burners">
             <img src="images/burner-main2.jpg" alt="Горелка на коробке">
@@ -205,7 +194,6 @@
 
       </div>
     </section>
-    <!-- БЛОК "НАШИ ВНЕДРЕНИЯ" ПОЛНОСТЬЮ УДАЛЕН -->
   </main>
 
   <footer class="footer">
