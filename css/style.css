@@ -18,8 +18,7 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: #ffffff; /* Текст по умолчанию белый */
   line-height: 1.55;
-  /* Изменили базовый фон на глубокий сине-серый вместо черного */
-  background-color: #0b1320; 
+  background-color: #0b1320; /* Глубокий сине-серый фон */
   
   display: flex;
   flex-direction: column;
@@ -41,7 +40,7 @@ body::before {
   z-index: -1;
   animation: slowZoom 30s infinite alternate ease-in-out;
   
-  /* !!! ВОТ ЗДЕСЬ МЫ ОТКЛЮЧИЛИ ПУШКУ !!! */
+  /* Пушка отключена */
   display: none; 
 }
 
@@ -327,7 +326,11 @@ a { color: inherit; }
 .form input:focus, .form select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2); }
 .form__note { font-size: 12px; color: rgba(255,255,255,0.4); margin: 0; }
 
-/* RESPONSIVE */
+
+/* ====================================================
+   RESPONSIVE (АДАПТИВ)
+   ==================================================== */
+
 @media (max-width: 1024px) {
   .header__logo-area { padding: 10px 15px; }
   .header__nav-area { padding: 0 15px; }
@@ -336,24 +339,87 @@ a { color: inherit; }
   .header__email { font-size: 14px; }
   .hero__inner { grid-template-columns: 1.2fr 1fr; gap: 30px; }
 }
+
 @media (max-width: 900px) {
   .hero__inner, .model, .form-wrap { grid-template-columns: 1fr; }
   .grid--3 { grid-template-columns: 1fr 1fr; }
   .featured-image-wrapper { margin-bottom: 30px; }
 }
+
 @media (max-width: 768px) {
-  .header__inner { flex-direction: column; }
-  .header__logo-area { justify-content: center; padding: 15px; }
-  .header__nav-area { flex-direction: column; padding: 15px; gap: 15px; align-items: center; }
-  .nav { display: none; flex-direction: column; width: 100%; background: var(--brand-teal); position: absolute; top: 100%; left: 0; z-index: 100; }
-  .nav.is-open { display: flex; }
-  .nav a { padding: 15px; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.1); justify-content: center; width: 100%; }
-  .header__contacts { align-items: center; text-align: center; margin-top: 10px; }
-  .burger { display: block; position: absolute; right: 20px; top: 20px; }
+  /* --- ШАПКА И МЕНЮ НА ТЕЛЕФОНЕ --- */
+  .header__inner { 
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    position: relative; /* Важно для позиционирования выпадающего меню */
+  }
+  
+  .header__logo-area { 
+    padding: 0; 
+    background: transparent; 
+  }
+  
+  /* Делаем логотип белым на темном фоне, чтобы его было видно */
+  .logo-text strong { color: #ffffff; } 
+  .logo-mark { background: #ffffff; color: var(--brand-teal); }
+
+  .header__nav-area { 
+    flex-grow: 0; 
+    background: transparent; 
+    padding: 0; 
+    width: auto;
+  }
+
+  /* Прячем контакты из шапки на телефоне, чтобы не мешали */
+  .header__contacts { 
+    display: none; 
+  }
+
+  /* --- КНОПКА БУРГЕР --- */
+  .burger { 
+    display: block; 
+    position: relative; 
+    right: auto; 
+    top: auto; 
+    margin-left: 15px; 
+    z-index: 100;
+  }
+
+  /* --- ВЫПАДАЮЩЕЕ МЕНЮ --- */
+  .nav { 
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    width: 100%; 
+    background: var(--brand-teal); 
+    flex-direction: column;
+    z-index: 90;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  }
+  
+  .nav.is-open { 
+    display: flex; 
+  }
+  
+  .nav a { 
+    padding: 15px; 
+    border-left: none; 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+    justify-content: center; 
+    width: 100%; 
+    font-size: 18px;
+  }
+
+  /* --- ОСТАЛЬНЫЕ БЛОКИ --- */
   .grid--3 { grid-template-columns: 1fr; }
   .section { padding: 50px 0; }
   .hero { padding: 50px 0; }
   .hero__inner { text-align: center; }
   .hero__actions { justify-content: center; }
   .hero__trust { justify-content: center; }
+  .form-wrap { grid-template-columns: 1fr; }
 }
