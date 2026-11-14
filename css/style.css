@@ -15,10 +15,11 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: #ffffff;
   line-height: 1.55;
-  background-color: #0b1320; 
+  background-color: #0b1320;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 main { flex: 1 0 auto; }
@@ -30,7 +31,14 @@ h3 { font-size: 18px; font-weight: 700; }
 p { margin: 0 0 12px; }
 a { color: inherit; }
 
-.container { width: min(1400px, 95%); margin: 0 auto; }
+/* ЕДИНЫЙ КОНТЕЙНЕР (ОГРАНИЧЕННАЯ ШИРИНА ДЛЯ ЧИТАЕМОСТИ) */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: max(5vw, 20px);
+  padding-right: max(5vw, 20px);
+}
 
 /* HEADER */
 .header {
@@ -41,13 +49,13 @@ a { color: inherit; }
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-.header__inner { 
-  display: flex; 
-  align-items: stretch; 
-  padding: 0; 
-  width: 100%; 
-  max-width: 100%; 
-  position: relative; /* Важно для мобильного меню */
+.header__inner {
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 .header__logo-area {
@@ -83,8 +91,8 @@ a { color: inherit; }
 .header__email { font-size: 15px; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.2s; }
 .header__phone:hover, .header__email:hover { color: var(--accent); }
 
-/* Кнопка меню (скрыта на ПК) */
 .burger { display: none; background: transparent; border: 0; padding: 8px; cursor: pointer; }
+.burger span { display: block; width: 28px; height: 3px; background: #fff; margin: 5px 0; border-radius: 2px; }
 
 /* BUTTONS */
 .btn {
@@ -135,42 +143,19 @@ a { color: inherit; }
 
 /* === МОБИЛЬНАЯ ВЕРСИЯ === */
 @media (max-width: 768px) {
-  /* Шапка */
+  .container { padding-left: 15px; padding-right: 15px; }
+
   .header__inner { flex-direction: column; }
-  .header__logo-area { justify-content: center; padding: 15px; width: 100%; }
-  .header__nav-area { flex-direction: column; padding: 15px; gap: 15px; align-items: center; width: 100%; }
-  
-  /* Меню */
-  .nav { display: none; flex-direction: column; width: 100%; background: var(--brand-teal); position: absolute; top: 100%; left: 0; z-index: 100; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+  .header__logo-area { justify-content: center; padding: 12px; width: 100%; }
+  .header__nav-area { flex-direction: column; padding: 0 15px 15px; gap: 12px; align-items: center; width: 100%; }
+  .burger { display: block; position: static; align-self: center; padding: 10px; }
+  .nav { display: none; flex-direction: column; width: 100%; margin: 0; padding: 0; background: var(--brand-teal-dark); border-radius: 8px; overflow: hidden; }
   .nav.is-open { display: flex; }
-  .nav a { padding: 15px; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.1); justify-content: center; width: 100%; }
-  
-  /* Контакты в шапке */
-  .header__contacts { align-items: center; text-align: center; margin-top: 10px; }
-  
-  /* Бургер (теперь он всегда кликабелен) */
-  .burger { 
-    display: block; 
-    position: absolute; 
-    right: 15px; 
-    top: 25px; 
-    z-index: 9999; /* Максимальный приоритет */
-    padding: 10px;
-  }
-  .burger span { 
-    display: block; 
-    width: 28px; 
-    height: 3px; 
-    background: var(--brand-teal); /* Зеленая на белом фоне */
-    margin: 5px 0; 
-    border-radius: 2px; 
-  }
-  
-  /* Сетки */
+  .nav a { padding: 14px; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.12); justify-content: center; width: 100%; }
+  .header__contacts { align-items: center; text-align: center; margin-top: 0; }
+
   .grid--3 { grid-template-columns: 1fr; }
   .model { grid-template-columns: 1fr; }
   .model__body { padding: 20px; }
-  
-  /* Отступы */
   .section { padding: 40px 0; }
 }
