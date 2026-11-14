@@ -91,7 +91,7 @@ a { color: inherit; }
 .header__email { font-size: 15px; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.2s; }
 .header__phone:hover, .header__email:hover { color: var(--accent); }
 
-.burger { display: none; background: transparent; border: 0; padding: 8px; cursor: pointer; }
+.burger { display: none; background: transparent; border: 0; cursor: pointer; }
 .burger span { display: block; width: 28px; height: 3px; background: #fff; margin: 5px 0; border-radius: 2px; }
 
 /* BUTTONS */
@@ -141,21 +141,82 @@ a { color: inherit; }
 .footer__cols { display: flex; gap: 24px; }
 .footer__cols a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
 
+/* === НИЖНЕЕ МЕНЮ (ТОЛЬКО ДЛЯ МОБИЛЬНЫХ) === */
+.mobile-bottom-nav { display: none; }
+
 /* === МОБИЛЬНАЯ ВЕРСИЯ === */
 @media (max-width: 768px) {
+  body { padding-bottom: 60px; } /* Отступ, чтобы контент не перекрывался меню */
   .container { padding-left: 15px; padding-right: 15px; }
 
   .header__inner { flex-direction: column; }
   .header__logo-area { justify-content: center; padding: 12px; width: 100%; }
   .header__nav-area { flex-direction: column; padding: 0 15px 15px; gap: 12px; align-items: center; width: 100%; }
-  .burger { display: block; position: static; align-self: center; padding: 10px; }
-  .nav { display: none; flex-direction: column; width: 100%; margin: 0; padding: 0; background: var(--brand-teal-dark); border-radius: 8px; overflow: hidden; }
+
+  /* Улучшенный бургер */
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    padding: 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    margin: 10px auto;
+  }
+  .burger span { width: 24px; height: 2px; background: #fff; margin: 3px 0; }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--brand-teal-dark);
+    border-radius: 8px;
+    overflow: hidden;
+  }
   .nav.is-open { display: flex; }
-  .nav a { padding: 14px; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.12); justify-content: center; width: 100%; }
-  .header__contacts { align-items: center; text-align: center; margin-top: 0; }
+  .nav a {
+    padding: 16px;
+    border-left: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    justify-content: center;
+    font-size: 18px;
+  }
+  .header__contacts { margin-top: 5px; align-items: center; text-align: center; }
 
   .grid--3 { grid-template-columns: 1fr; }
   .model { grid-template-columns: 1fr; }
   .model__body { padding: 20px; }
   .section { padding: 40px 0; }
+
+  /* Нижнее меню */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #0b1320;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 1000;
+  }
+  .mobile-bottom-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 15px 5px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-right: 1px solid rgba(255,255,255,0.05);
+  }
+  .mobile-bottom-nav a:last-child { border-right: none; }
+  .mobile-bottom-nav a.active {
+    color: #e86f22;
+    background: rgba(232,111,34,0.1);
+  }
 }
